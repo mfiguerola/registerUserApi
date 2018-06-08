@@ -19,7 +19,64 @@ const pages = {
     },
     form: {
       type: "select",
-      values: ["guest", "agency", "company"]
+      values: ["guest", "agency", "company"],
+    }
+  },
+  register: {
+    literals: {
+      guest: {
+        header: 'HOTEL GUEST',
+        name: {
+          title: 'Name',
+          placeholder: 'Enter your name'
+        },
+        lastName: {
+          title: 'Last name',
+          placeholder: 'Enter your last name'
+        },
+        email: {
+          title: 'Email',
+          placeholder: 'Enter your email'
+        },
+        phone: {
+          title: 'Phone',
+          placeholder: 'Enter your phone'
+        }
+      },
+      agency: {
+      },
+      company: {
+      },
+      common: {
+        requiredFields: 'required fields',
+        buttonText: 'SEND'
+      }
+    },
+    form: {
+      values: {
+        guest: [
+          {
+            key: 'name',
+            type: 'text',
+            mandatory: true
+          },
+          {
+            key: 'lastName',
+            type: 'text',
+            mandatory: true
+          },
+          {
+            key: 'email',
+            type: 'email',
+            mandatory: true
+          },
+          {
+            key: 'phone',
+            type: 'number',
+            mandatory: false
+          }
+        ]
+      }
     }
   }
 };

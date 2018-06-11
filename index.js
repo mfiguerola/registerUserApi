@@ -161,7 +161,7 @@ const pages = {
       guest: {
         header: "HOTEL GUEST",
         title: {
-          prefix: "WELCOME",
+          prefix: "WELCOME ",
           suffix: "!"
         },
         content: {

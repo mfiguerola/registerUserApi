@@ -44,8 +44,42 @@ const pages = {
         }
       },
       agency: {
+        header: 'TRAVEL AGENCY',
+        name: {
+          title: 'Agency name',
+          placeholder: 'Enter your agency name'
+        },
+        contactName: {
+          title: 'Contact name',
+          placeholder: 'Enter your contact name'
+        },
+        email: {
+          title: 'Contact email',
+          placeholder: 'Enter your contact email'
+        },
+        idCode: {
+          title: 'Agency id code',
+          placeholder: 'Enter agency id code'
+        }
       },
       company: {
+        header: 'COMPANY',
+        name: {
+          title: 'Company name',
+          placeholder: 'Enter your company name'
+        },
+        email: {
+          title: 'Contact email',
+          placeholder: 'Enter your contact email'
+        },
+        phone: {
+          title: 'Phone',
+          placeholder: 'Enter your company phone'
+        },
+        comments: {
+          title: 'Comments',
+          placeholder: 'Add your comments here'
+        },
       },
       common: {
         requiredFields: 'required fields',
@@ -73,6 +107,50 @@ const pages = {
           {
             key: 'phone',
             type: 'number',
+            mandatory: false
+          }
+        ],
+        agency: [
+          {
+            key: 'name',
+            type: 'text',
+            mandatory: true
+          },
+          {
+            key: 'contactName',
+            type: 'text',
+            mandatory: true
+          },
+          {
+            key: 'email',
+            type: 'email',
+            mandatory: true
+          },
+          {
+            key: 'idCode',
+            type: 'text',
+            mandatory: false
+          }
+        ],
+        company: [
+          {
+            key: 'name',
+            type: 'text',
+            mandatory: true
+          },
+          {
+            key: 'email',
+            type: 'email',
+            mandatory: true
+          },
+          {
+            key: 'phone',
+            type: 'number',
+            mandatory: true
+          },
+          {
+            key: 'comments',
+            type: 'text',
             mandatory: false
           }
         ]

@@ -18,153 +18,209 @@ const pages = {
       loginLink: "Are you registered?"
     },
     form: {
-      type: "select",
-      values: ["guest", "agency", "company"],
+      values: ["guest", "agency", "company"]
     }
   },
   register: {
     literals: {
       guest: {
-        header: 'HOTEL GUEST',
+        header: "HOTEL GUEST",
         name: {
-          title: 'Name',
-          placeholder: 'Enter your name'
+          title: "Name",
+          placeholder: "Enter your name"
         },
         lastName: {
-          title: 'Last name',
-          placeholder: 'Enter your last name'
+          title: "Last name",
+          placeholder: "Enter your last name"
         },
         email: {
-          title: 'Email',
-          placeholder: 'Enter your email'
+          title: "Email",
+          placeholder: "Enter your email"
         },
         phone: {
-          title: 'Phone',
-          placeholder: 'Enter your phone'
+          title: "Phone",
+          placeholder: "Enter your phone"
         }
       },
       agency: {
-        header: 'TRAVEL AGENCY',
+        header: "TRAVEL AGENCY",
         name: {
-          title: 'Agency name',
-          placeholder: 'Enter your agency name'
+          title: "Agency name",
+          placeholder: "Enter your agency name"
         },
         contactName: {
-          title: 'Contact name',
-          placeholder: 'Enter your contact name'
+          title: "Contact name",
+          placeholder: "Enter your contact name"
         },
         email: {
-          title: 'Contact email',
-          placeholder: 'Enter your contact email'
+          title: "Contact email",
+          placeholder: "Enter your contact email"
         },
         idCode: {
-          title: 'Agency id code',
-          placeholder: 'Enter agency id code'
+          title: "Agency id code",
+          placeholder: "Enter agency id code"
         }
       },
       company: {
-        header: 'COMPANY',
+        header: "COMPANY",
         name: {
-          title: 'Company name',
-          placeholder: 'Enter your company name'
+          title: "Company name",
+          placeholder: "Enter your company name"
         },
         email: {
-          title: 'Contact email',
-          placeholder: 'Enter your contact email'
+          title: "Contact email",
+          placeholder: "Enter your contact email"
         },
         phone: {
-          title: 'Phone',
-          placeholder: 'Enter your company phone'
+          title: "Phone",
+          placeholder: "Enter your company phone"
         },
         comments: {
-          title: 'Comments',
-          placeholder: 'Add your comments here'
-        },
+          title: "Comments",
+          placeholder: "Add your comments here"
+        }
       },
       common: {
-        requiredFields: 'required fields',
-        buttonText: 'SEND'
+        requiredFields: "required fields",
+        buttonText: "SEND"
       }
     },
     form: {
       values: {
         guest: [
           {
-            key: 'name',
-            type: 'text',
+            key: "name",
+            type: "text",
             mandatory: true
           },
           {
-            key: 'lastName',
-            type: 'text',
+            key: "lastName",
+            type: "text",
             mandatory: true
           },
           {
-            key: 'email',
-            type: 'email',
+            key: "email",
+            type: "email",
             mandatory: true
           },
           {
-            key: 'phone',
-            type: 'number',
+            key: "phone",
+            type: "number",
             mandatory: false
           }
         ],
         agency: [
           {
-            key: 'name',
-            type: 'text',
+            key: "name",
+            type: "text",
             mandatory: true
           },
           {
-            key: 'contactName',
-            type: 'text',
+            key: "contactName",
+            type: "text",
             mandatory: true
           },
           {
-            key: 'email',
-            type: 'email',
+            key: "email",
+            type: "email",
             mandatory: true
           },
           {
-            key: 'idCode',
-            type: 'text',
+            key: "idCode",
+            type: "text",
             mandatory: false
           }
         ],
         company: [
           {
-            key: 'name',
-            type: 'text',
+            key: "name",
+            type: "text",
             mandatory: true
           },
           {
-            key: 'email',
-            type: 'email',
+            key: "email",
+            type: "email",
             mandatory: true
           },
           {
-            key: 'phone',
-            type: 'number',
+            key: "phone",
+            type: "number",
             mandatory: true
           },
           {
-            key: 'comments',
-            type: 'text',
+            key: "comments",
+            type: "text",
             mandatory: false
           }
         ]
       }
     }
+  },
+  welcome: {
+    literals: {
+      guest: {
+        header: "HOTEL GUEST",
+        title: {
+          prefix: "WELCOME",
+          suffix: "!"
+        },
+        content: {
+          title: "Advantages",
+          list: [
+            "Enjoy a 10% discount on your reservation",
+            "24hs / 365 days phone <br /> 900 - 000 - 0000"
+          ]
+        }
+      },
+      agency: {
+        header: "TRAVEL AGENCY",
+        title: {
+          prefix: "THANK YOU!<br/>",
+          suffix: ""
+        },
+        content: {
+          title: "Shortly we will be in contact",
+          list: []
+        }
+      },
+      company: {
+        header: "COMPANY",
+        title: {
+          prefix: "THANK YOU!<br/>",
+          suffix: ""
+        },
+        content: {
+          title: "Shortly we will be in contact",
+          list: []
+        }
+      },
+      common: {
+        buttonText: "CONTINUE"
+      }
+    },
+    form: {
+      values: {
+        guest: {
+          checkIcon: "after"
+        },
+        agency: {
+          checkIcon: "before"
+        },
+        company: {
+          checkIcon: "before"
+        }
+      }
+
+    }
   }
 };
 
-app.route("/page/:pageId").get((req, res) => {
+app.route('/page/:pageId').get((req, res) => {
   res.json(pages[req.params.pageId]);
 });
 
 const server = app.listen(4000, () => {
   const port = server.address().port;
 
-  console.log("Server listening at http://localhost:%s", port);
+  console.log('Server listening at http://localhost:%s', port);
 });

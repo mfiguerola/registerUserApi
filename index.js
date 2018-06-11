@@ -201,13 +201,13 @@ const pages = {
     form: {
       values: {
         guest: {
-          checkIcon: "after"
+          checkIcon: "before"
         },
         agency: {
-          checkIcon: "before"
+          checkIcon: "after"
         },
         company: {
-          checkIcon: "before"
+          checkIcon: "after"
         }
       }
 
